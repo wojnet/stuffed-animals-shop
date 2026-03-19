@@ -5,15 +5,15 @@ import LogoutButton from "../LogoutButton";
 
 const AdminNavigation = () => {
   return (
-    <nav className="h-[calc(100vh-96px)] w-40 flex flex-col gap-2 sm:text-lg p-5 sticky top-0 shrink-0">
+    <nav className="h-[calc(100vh-96px)] w-40 flex flex-col gap-2 sm:text-lg p-5 sticky top-24 shrink-0">
       <Link href="/admin">
-        🏠 HOME
+        HOME
       </Link>
       <Link href="/admin/products">
-        🧸 PRODUCTS
+        PRODUCTS
       </Link>
       <Link href="/admin/orders">
-        📦 ORDERS
+        ORDERS
       </Link>
       <div
         className="grow"

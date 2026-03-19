@@ -27,9 +27,10 @@ export default function RootLayout({
         suppressHydrationWarning
         lang="en"
         className={`${geistSans.variable} ${londrinaSketch.variable} ${londrinaSolid.variable}`}
-        // className={`${geistSans.variable} ${londrinaSketch.variable} ${londrinaSolid.variable} h-full antialiased`}
       >
-        {children}
+        <body>
+          {children}
+        </body>
       </html>
     </ThemeProvider>
   );

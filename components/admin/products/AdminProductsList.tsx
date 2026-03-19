@@ -1,3 +1,4 @@
+"use client"
 import { Product, Category } from "@/generated/prisma/client";
 import AdminProduct from "@/components/admin/products/AdminProduct";
 

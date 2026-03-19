@@ -12,8 +12,8 @@ const AdminHeader = async () => {
   }
 
   return (
-    <header className="w-full h-24 flex justify-between items-center p-5">
-      <h1 className="text-4xl">STUFFED DASHBOARD</h1>
+    <header className="w-full h-24 bg-background z-10 flex justify-between items-center p-5 sticky top-0">
+      <h1 className="text-4xl">Hello, {session.user?.name}!</h1>
       <div className="flex items-center gap-4">
         <ThemeToggle />
         <Image

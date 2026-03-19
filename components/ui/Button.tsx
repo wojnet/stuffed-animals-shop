@@ -20,7 +20,7 @@ const Button = ({
 
   const variants = {
     primary: "",
-    slim: "border-[1px] font-sans"
+    slim: "border-[1px] font-sans shadow-none rounded-lg"
   };
 
   const sizes = {

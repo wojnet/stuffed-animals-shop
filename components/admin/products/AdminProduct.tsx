@@ -26,17 +26,26 @@ const AdminProduct = ({ product }: AdminProductProps) => {
           src={`https://stuffed-animals-shop.s3.eu-central-1.amazonaws.com/${product.images[0]}`}
           fill
           alt={product.name}
-          className="object-cover object-center rounded-md"
+          className="object-cover object-center rounded-md hover:opacity-70 transition-opacity"
         />
       </Link>
-      <h3 className="text-xs sm:text-sm w-24 sm:w-36">
+      <Link
+        href={`/admin/products/${product.slug}`}
+        className="font-medium text-xs sm:text-sm w-24 sm:w-36 hover:opacity-70 transition-opacity"
+      >
         {product.name}
-      </h3>
+      </Link>
+      <p className="text-sm w-16 sm:w-24">
+        {product.category.name}
+      </p>
       <p className="italic text-sm w-16 sm:w-24">
         {formatPrice(product.price)}
       </p>
-      <p className="italic text-sm hidden lg:w-52 lg:block line-clamp-3">
+      <p className="italic text-sm hidden xl:block xl:w-72 line-clamp-3">
         {product.description}
+      </p>
+      <p className="italic text-sm hidden lg:w-20 lg:block">
+        {product.createdAt.toLocaleDateString()}
       </p>
       <div className="grow flex justify-end p-4 gap-2">
         <Link
@@ -45,16 +54,25 @@ const AdminProduct = ({ product }: AdminProductProps) => {
         >
           <Button
             variant="slim"
-            size="sm"
+            size="xs"
+            className="bg-emerald-300 font-bold hover:translate-0 hover:opacity-70"
           >
             Edit
           </Button>
         </Link>
         <Button
           variant="slim"
-          size="sm"
+          size="xs"
+          className="bg-rose-300 font-bold hover:translate-0 hover:opacity-70"
         >
           Delete
+        </Button>
+        <Button
+          variant="slim"
+          size="xs"
+          className="bg-blue-300 font-bold hover:translate-0 hover:opacity-70"
+        >
+          Clone
         </Button>
       </div>
     </div>

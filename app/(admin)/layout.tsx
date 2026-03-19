@@ -28,17 +28,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <ThemeProvider>
-      <html
-        suppressHydrationWarning
-        lang="en"
-        className={`${geistSans.variable} ${londrinaSketch.variable} ${londrinaSolid.variable} h-full antialiased`}
-      >
-        <body className="min-h-full flex flex-col">
-          {children}
-        </body>
-      </html>
-    </ThemeProvider>
-  );
+  return (<>{children}</>);
 }
