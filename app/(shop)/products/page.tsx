@@ -1,5 +1,5 @@
-import ProductGrid from "@/components/shop/products/ProductGrid";
-import ProductTile from "@/components/shop/products/ProductTile";
+import ProductGrid from "@/components/shop/Products/ProductGrid";
+import ProductTile from "@/components/shop/Products/ProductTile";
 import { getProducts } from "@/lib/db/products";
 
 const ProductsPage = async () => {

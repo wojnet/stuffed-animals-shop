@@ -3,6 +3,7 @@ import { formatPrice } from "@/lib/utils";
 import type { ProductTileData } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import AddToCartButton from "./AddToCartButton";
 
 interface ProductTileProps {
   product: ProductTileData;
@@ -10,27 +11,37 @@ interface ProductTileProps {
 
 const ProductTile = ({ product }: ProductTileProps) => {
   return (
-    <Link
-      href={`/products/${product.slug}`}
+    <div
       className="flex flex-col gap-3"
     >
-      <div className="relative aspect-3/4 w-full">
+      <Link
+        href={`/products/${product.slug}`}
+        className="relative aspect-3/4 w-full"
+      >
         <Image
           src={`https://stuffed-animals-shop.s3.eu-central-1.amazonaws.com/${product.images[0]}`}
           fill
           alt={product.name}
           className="object-cover rounded-2xl"
         />
+      </Link>
+      <div className="flex justify-between items-end">
+        <div>
+          <Link
+            href={`/products/${product.slug}`}
+            className="font-bold"
+          >
+            {product.name.toUpperCase()}
+          </Link>
+          <p className="italic">
+            {formatPrice(product.price)}
+          </p>
+        </div>
+        <AddToCartButton
+          product={product}
+        />
       </div>
-      <div>
-        <h3 className="font-bold">
-          {product.name.toUpperCase()}
-        </h3>
-        <p className="italic">
-          {formatPrice(product.price)}
-        </p>
-      </div>
-    </Link>
+    </div>
   );
 };
 

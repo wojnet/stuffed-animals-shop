@@ -47,7 +47,7 @@ const AdminProduct = ({ product }: AdminProductProps) => {
       <p className="italic text-sm hidden lg:w-20 lg:block">
         {product.createdAt.toLocaleDateString()}
       </p>
-      <div className="grow flex justify-end p-4 gap-2">
+      <div className="flex grow justify-end p-4 gap-2">
         <Link
           href={`/admin/products/${product.slug}`}
           className="text-sm"

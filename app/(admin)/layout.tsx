@@ -28,5 +28,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (<>{children}</>);
+  return (
+    <body className="min-h-full flex flex-col">
+      {children}
+    </body>
+  );
 }

@@ -28,9 +28,7 @@ export default function RootLayout({
         lang="en"
         className={`${geistSans.variable} ${londrinaSketch.variable} ${londrinaSolid.variable}`}
       >
-        <body>
-          {children}
-        </body>
+        {children}
       </html>
     </ThemeProvider>
   );
